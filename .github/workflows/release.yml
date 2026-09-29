@@ -1,0 +1,27 @@
+name: Release
+
+# Push a version tag (e.g. 1.0.1, created by `npm version`) to build the plugin and attach the three files
+# Obsidian needs to a draft GitHub release. Review and publish the draft by hand.
+on:
+  push:
+    tags:
+      - "*"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - run: npm ci
+      - run: npm run build
+      - run: npm test
+      - name: Draft release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release create "${GITHUB_REF_NAME}" --title "${GITHUB_REF_NAME}" --draft main.js manifest.json styles.css

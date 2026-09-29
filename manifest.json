@@ -1,0 +1,10 @@
+{
+	"id": "live-files",
+	"name": "Live Files",
+	"version": "1.0.0",
+	"minAppVersion": "1.5.0",
+	"description": "Tail Follow: keep a note scrolled to its end while another program writes to it (like tail -f), and highlight files that changed outside Obsidian in the last minute.",
+	"author": "Dean Hallman",
+	"authorUrl": "https://github.com/rdhallman",
+	"isDesktopOnly": false
+}

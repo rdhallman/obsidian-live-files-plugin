@@ -1,0 +1,16 @@
+/* Live Files */
+
+/* The Tail Follow button in a note's header: accented while following. */
+.view-action.live-files-tail-action.live-files-tail-on {
+	color: var(--interactive-accent);
+	background-color: var(--background-modifier-hover);
+}
+
+/* Tab titles of files changed outside Obsidian (file explorer rules are added at runtime per path). */
+.workspace-tab-header.live-files-changed .workspace-tab-header-inner-title {
+	font-weight: var(--font-bold, 700);
+}
+
+.live-files-status {
+	color: var(--text-accent);
+}
